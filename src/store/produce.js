@@ -19,6 +19,5 @@ export default function produceReducer(state ={}, action){
             return newState;
         default:
             return state;
-
     }
 }
