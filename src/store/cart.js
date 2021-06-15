@@ -1,15 +1,26 @@
-// const getProduce = ()
-//  // grab the state, the name of the state reducer, then the name of the key in the state
-//  const articles = useSelector(state=>state.articleState.articles)
+// export const addArticle = (newArticle) => {
+//     return {
+//       type: ADD_ARTICLE,
+//       newArticle
+//     };
+//   };
 
-import { useSelector } from "react-redux";
+// const ADD_ARTICLE = 'article/addArticle';
 
-// const produce = useSelector(state =>state.produce.)
-export default function cartReducer(state ={}, action){
+const ADD_ITEM = 'cart/addItem'
+
+export const addToCart = (id) => {
+    return {
+        type: ADD_ITEM,
+        id
+    }
+}
+
+export default function cartReducer(state = {}, action){
     switch(action.type){
-       
+        case ADD_ITEM:
+            return { ...state, [action.id]: { id: action.id, count: 1 }}
         default:
             return state;
-
     }
 }
