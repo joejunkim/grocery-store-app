@@ -15,6 +15,7 @@ export default function produceReducer(state ={}, action){
             const newState ={};
             action.produce.forEach(produce =>{
                 newState[produce.id] = produce
+        
             })
             return newState;
         default:
